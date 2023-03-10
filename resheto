@@ -1,0 +1,14 @@
+def eratosthenes(n):
+    # создаем список от 2 до n
+    nums = list(range(2, n+1))
+    primes = []
+
+    while nums:
+        # выбираем первый элемент списка
+        p = nums.pop(0)
+        primes.append(p)
+
+        # удаляем все числа, которые делятся на p
+        nums = [num for num in nums if num % p != 0]
+
+    return primes
